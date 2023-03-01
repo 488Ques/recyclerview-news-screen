@@ -12,12 +12,12 @@ import java.util.LinkedList;
 
 public class ItemListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
-    private final LinkedList<String> mItemList;
+    private final LinkedList<NewsItem> mNewsItemList;
     private final LayoutInflater mInflater;
 
-    public ItemListAdapter(Context context, LinkedList<String> itemList) {
+    public ItemListAdapter(Context context, LinkedList<NewsItem> newsItemList) {
         mInflater = LayoutInflater.from(context);
-        this.mItemList = itemList;
+        this.mNewsItemList = newsItemList;
     }
 
     @NonNull
@@ -29,12 +29,13 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        String mCurrent = mItemList.get(position);
-        holder.pItemView.setText(mCurrent);
+        NewsItem mCurrent = mNewsItemList.get(position);
+        holder.tv_title.setText(mCurrent.getTitle());
+        holder.tv_content.setText(String.format("%1.50s ...", mCurrent.getContent()));
     }
 
     @Override
     public int getItemCount() {
-        return mItemList.size();
+        return mNewsItemList.size();
     }
 }

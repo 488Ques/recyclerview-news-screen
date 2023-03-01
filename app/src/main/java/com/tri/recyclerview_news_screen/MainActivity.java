@@ -19,14 +19,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LinkedList<String> mItemList = new LinkedList<>();
-        mItemList.add("NIGGER");
-        mItemList.add("FAGGOT");
-        mItemList.add("HUH");
-        mItemList.add("HAH");
-        mItemList.add("NONONONO");
-        mItemList.add("KINOKINOKINOKINO");
-        mItemList.add("KYSKYSKYKSKYS");
+        String sampleContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed dapibus urna. Integer faucibus massa nunc, in porta urna laoreet vel. Phasellus non mattis risus.";
+        LinkedList<NewsItem> mItemList = new LinkedList<>();
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
+        mItemList.add(new NewsItem("Title", sampleContent));
 
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new ItemListAdapter(this, mItemList);
